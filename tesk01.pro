@@ -4,7 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    csphere.cpp
+    csphere.cpp \
+    util.cpp
 
 HEADERS += \
-    csphere.h
+    csphere.h \
+    util.h

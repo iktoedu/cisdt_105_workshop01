@@ -14,6 +14,9 @@ public:
     double getSurfaceArea();
     double getVolume();
 
+    bool isInsideOf(CSphere &sphere);
+    bool haveCommonPointsWith(CSphere &sphere);
+
 private:
     double x,y,z,r;
 };

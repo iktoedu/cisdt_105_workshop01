@@ -1,5 +1,6 @@
 #include "csphere.h"
 #include <cmath>
+#include "util.h"
 
 CSphere::CSphere()
 {
@@ -29,4 +30,29 @@ double CSphere::getSurfaceArea()
 double CSphere::getVolume()
 {
     return (4.0 / 3.0) * M_PI * pow(r, 3);
+}
+
+bool CSphere::isInsideOf(CSphere &sphere)
+{
+    double dblDistance = distance3d(x, y, z, sphere.x, sphere.y, sphere.z);
+
+    if (r > sphere.r) {
+        return (sphere.r + dblDistance) < r;
+    }
+    else {
+        return (r + dblDistance) < sphere.r;
+    }
+}
+
+bool CSphere::haveCommonPointsWith(CSphere &sphere)
+{
+    if ((sphere.r + r) > distance3d(x, y, z, sphere.x, sphere.y, sphere.z)) {
+        return false;
+    }
+
+    if (isInsideOf(sphere)) {
+        return false;
+    }
+
+    return true;
 }
