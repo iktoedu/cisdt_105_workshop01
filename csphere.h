@@ -19,6 +19,8 @@ public:
 
 private:
     double x,y,z,r;
+
+    friend void printSphere(CSphere &sphere);
 };
 
 #endif // CSPHERE_H
