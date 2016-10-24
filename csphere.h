@@ -11,6 +11,9 @@ public:
 
     bool isValid();
 
+    double getSurfaceArea();
+    double getVolume();
+
 private:
     double x,y,z,r;
 };

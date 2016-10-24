@@ -1,4 +1,5 @@
 #include "csphere.h"
+#include <cmath>
 
 CSphere::CSphere()
 {
@@ -18,4 +19,14 @@ CSphere::CSphere(CSphere &sphere)
 bool CSphere::isValid()
 {
     return (r > 0);
+}
+
+double CSphere::getSurfaceArea()
+{
+    return 4.0 * M_PI * pow(r, 2);
+}
+
+double CSphere::getVolume()
+{
+    return (4.0 / 3.0) * M_PI * pow(r, 3);
 }
