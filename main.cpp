@@ -4,12 +4,8 @@
 
 using namespace std;
 
-int main(int argc, char *argv[])
+void playCase(CSphere *sphere1, CSphere *sphere2)
 {
-
-    CSphere *sphere1 = new CSphere(2, 1, 3, 12);
-    CSphere *sphere2 = new CSphere(5, 6, -3, 5);
-
     cout << "Sphere 1: ";
     printSphere(*sphere1);
     cout << "Sphere 2: ";
@@ -42,6 +38,40 @@ int main(int argc, char *argv[])
     else {
         cout << "The sphere 1 doesn't have common points with sphere 2." << endl;
     }
+}
+
+int main(int argc, char *argv[])
+{
+
+    CSphere *sphere1 = new CSphere(2, 1, 3, 12);
+    CSphere *sphere2 = new CSphere(5, 6, -3, 5);
+
+    cout << "Case 1:" << endl;
+    playCase(sphere1, sphere2);
+    cout << endl;
+
+    delete sphere1;
+    delete sphere2;
+
+    sphere1 = new CSphere(2, 1, 3, 12);
+    sphere2 = new CSphere(2, 0, 3, 3);
+
+    cout << "Case 2:" << endl;
+    playCase(sphere1, sphere2);
+    cout << endl;
+
+    delete sphere1;
+    delete sphere2;
+
+    sphere1 = new CSphere(2, 1, 3, 12);
+    sphere2 = new CSphere(2, 0, 3, 12);
+
+    cout << "Case 3:" << endl;
+    playCase(sphere1, sphere2);
+    cout << endl;
+
+    delete sphere1;
+    delete sphere2;
 
     return 0;
 }
