@@ -9,6 +9,8 @@ public:
     CSphere(double x, double y, double z, double r);
     CSphere(CSphere &sphere);
 
+    bool isValid();
+
 private:
     double x,y,z,r;
 };
